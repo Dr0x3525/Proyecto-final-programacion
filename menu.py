@@ -1,5 +1,6 @@
 import os
 
+import ejercicios_parcial_1.ejercicio1 as parcial_1_ejercicio_1
 #////////opciones////
 
 def opciones_menu_principal(opcion_escogida):
@@ -206,7 +207,7 @@ def opciones_ejercicios_parciales(opcion_escogida):
     match opcion_escogida:
         case "1":
             print("opcion 1")
-            os.system("pause")
+            parcial_1_ejercicio_1.inicializar_ejercicio_1()
             return "1"
         case "2":
             print("opcion 2")
@@ -437,8 +438,7 @@ def menu_ejercicios_con_cadenas():
 #////////EJERCICIOS ////
 
 #////////EJERCICIOS PARCIALES////
-def ejercicio1_(args):
- pass
+
 #////////fin menus////
 
 

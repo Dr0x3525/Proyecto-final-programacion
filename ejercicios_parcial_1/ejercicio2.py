@@ -53,7 +53,7 @@ def repeticiones_del_programa():
             print("Error: Debe ingresar un número entero válido. Intente nuevamente.")
             os.system("pause")
                 
-def inicializar_variables():
+def inicializar_ejercicio_2():
     cd = repeticiones_del_programa()
     os.system("cls")
     contador_triangulos_equilateros = 0
@@ -87,7 +87,7 @@ def inicializar_variables():
 
         
         
-inicializar_variables()
+#inicializar_variables()
             
     
 

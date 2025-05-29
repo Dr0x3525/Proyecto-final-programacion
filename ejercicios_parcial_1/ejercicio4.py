@@ -1,6 +1,7 @@
 #busca un dato en una cantidad de datos dada
 #y hallar la multiplicacion con sumas del primer primo
 #y el primer fibbonacci que se encuentra despues de este dato hallado
+import os
 
 def Comprobar_ser_primo(numero):
     numero = int(numero)
@@ -48,6 +49,7 @@ def buscar_primer_primo(lista_recortada):
     for i in lista_recortada:
         if Comprobar_ser_primo(i):
             return i
+
     
 def multiplicacion_con_sumas(a, b):
     resultado = 0
@@ -57,28 +59,31 @@ def multiplicacion_con_sumas(a, b):
 
 def pedir_lista():
     lista = []
-    cantidad_datos = input("cuantos datos va a ingresar")
+    cantidad_datos = input("cuantos datos va a ingresar: ")
     cantidad_datos = int(cantidad_datos)
     for i in range(cantidad_datos):
-        numero = input("digite un numero")
+        numero = input("digite un numero: ")
         numero = int(numero)
         lista.append(numero)
         
     return lista
         
 def pedir_numero_buscado():
-    numero_buscado = input("digite el numero que va a buscar")
+    numero_buscado = input("digite el numero que va a buscar: ")
     numero_buscado = int(numero_buscado)
     return numero_buscado
 
 def inicializar_ejercicio_4_parcial_1():
+    os.system("cls")
     lista = pedir_lista()
     buscar_dato = pedir_numero_buscado()
     lista_recortada= recortar_lista(lista,buscar_dato)
     primer_fib = buscar_primer_fib(lista_recortada)
     primer_primo = buscar_primer_primo(lista_recortada)
     resultado = multiplicacion_con_sumas(primer_primo,primer_fib)
-    print(resultado)
+    os.system("cls")
+    print(f"Datos: {lista}")
+    print(f"numero buscado: {buscar_dato}")
+    print(f"el resultado de la multiplicacion del primer fibbonaci despues del dato buscado {primer_fib} y el primer primo despues del dato buscado {primer_primo} es {resultado}")
+    os.system("pause")
 
-
-inicializar_ejercicio_4_parcial_1()

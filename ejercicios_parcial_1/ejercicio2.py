@@ -54,6 +54,7 @@ def repeticiones_del_programa():
             os.system("pause")
                 
 def inicializar_ejercicio_2():
+    os.system("cls")
     cd = repeticiones_del_programa()
     os.system("cls")
     contador_triangulos_equilateros = 0
@@ -78,11 +79,8 @@ def inicializar_ejercicio_2():
             contador_triangulos_isosceles += 1
         else:
             contador_triangulos_escalenos += 1#Escaleno: todos los lados diferentes.
-        
-
-
     mostrar_factura(contador_triangulos_equilateros,contador_triangulos_escalenos,contador_triangulos_isosceles,mayor_perimetro)
-    
+    os.system("pause")
 
 
         

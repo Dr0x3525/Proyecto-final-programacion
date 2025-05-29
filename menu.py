@@ -2,6 +2,8 @@ import os
 
 import ejercicios_parcial_1.ejercicio1 as parcial_1_ejercicio_1
 import ejercicios_parcial_1.ejercicio2 as parcial_1_ejercicio_2
+import ejercicios_parcial_1.ejercicio3 as parcial_1_ejercicio_3
+import ejercicios_parcial_1.ejercicio4 as parcial_1_ejercicio_4
 #////////opciones////
 
 def opciones_menu_principal(opcion_escogida):
@@ -208,7 +210,8 @@ def opciones_ejercicios_parciales(opcion_escogida):
     match opcion_escogida:
         case "1":
             print("opcion 1")
-            parcial_1_ejercicio_1.inicializar_ejercicio_1()
+            while opciones_ejercicios_parcial_1(menu_parcial_1()) != "5":
+              pass  
             return "1"
         case "2":
             print("opcion 2")
@@ -225,11 +228,34 @@ def opciones_ejercicios_parciales(opcion_escogida):
         case "5":
             return "5"
         case other:
-            print("error puto")
+            print("error ")
             os.system("pause")
             return "6"
 
-
+def opciones_ejercicios_parcial_1(opcion_escogida):
+    match opcion_escogida:
+        case "1":
+            print("opcion 1")
+            parcial_1_ejercicio_1.inicializar_ejercicio_1()
+            return "1"
+        case "2":
+            print("opcion 2")
+            parcial_1_ejercicio_2.inicializar_ejercicio_2()
+            return "2"
+        case "3":
+            print("opcion 3")
+            parcial_1_ejercicio_3.inicializar_ejercicio_3_parcial_1()
+            return "3"
+        case "4":
+            print("opcion 4")
+            parcial_1_ejercicio_4.inicializar_ejercicio_4_parcial_1()
+            return "4"
+        case "5":
+            return "5"
+        case other:
+            print("error ")
+            os.system("pause")
+            return "6"
 
 def opciones_ejercicios_con_cadenas(opcion_escogida):
     match opcion_escogida:
@@ -330,6 +356,20 @@ def menu_parciales():
     opcion = input("elija una opcion :") #ya que la variable para la variable opcion no se van a realizar operaciones lo mejor es dejala con un string     
     return opcion
 
+def menu_parcial_1():
+    os.system('cls') 
+    print('---------------------------------')
+    print('   1. ejercicio 1')
+    print('   2. ejercicio 2')
+    print('   3. ejercicio 3')
+    print('   4. ejercicio 4')
+    print('   ')
+    print('   5. Regresar')
+    print('')
+    print('--------------------------------')
+    
+    opcion = input("elija una opcion :") #ya que la variable para la variable opcion no se van a realizar operaciones lo mejor es dejala con un string     
+    return opcion
 
 #////////menus ejercicios////
 

@@ -5,6 +5,7 @@
 #esta suma se encuentra en la segunda serie de numeros, el dato buscado esta dos posiciones despues de la posicion del dato encontrado de
 #acuerdo al orden de entrada. no realizar validaciones
 
+import os
 
 def Comprobar_ser_primo(numero):
     numero = int(numero)
@@ -30,6 +31,7 @@ def comprobar_ser_fibbonaci(numero):
         f1 = f2
         f2 = f1 + temp
     return False
+
         
 def Pedir_1_Secuencia():
     
@@ -38,18 +40,15 @@ def Pedir_1_Secuencia():
 def Pedir_2_Secuencia():
         return int(input("cuantos datos vas a ingresar en la segunda secuencia: "))
 
-def llenar_datos_1_secuencia(secuencia_1,cantidad_de_datos_a_ingresar):
-    for i in range(cantidad_de_datos_a_ingresar):
-        dato = input("ingrese un dato en la secuencia 1: ")
-        secuencia_1.append(dato)
-    return secuencia_1
-     
 
-def llenar_datos_2_secuencia(secuencia_2,cantidad_de_datos_a_ingresar):
-    for i in range(cantidad_de_datos_a_ingresar):
-        dato = input("ingrese un dato en la secuencia 2: ")
-        secuencia_2.append(dato)
-    return secuencia_2
+def llenar_secuencia(cantidad):
+    secuencia = []
+    for i in range(cantidad):
+        dato = input("ingrese un dato en la secuencia: ")
+        secuencia.append(dato)
+    return secuencia
+
+     
 
 
 def encontrar_fib_menor(secuencia_1):
@@ -75,27 +74,37 @@ def encontrar_el_dato_buscado(numero,secuencia_2):
      
 
 def inicializar_ejercicio_3_parcial_1():
+    os.system("cls")
     secuencia_1 =[]
     secuencia_2 =[]
     
     cantida_de_datos_1_secuencia = Pedir_1_Secuencia()
     cantida_de_datos_2_secuencia = Pedir_2_Secuencia()
     
-    secuencia_1 = llenar_datos_1_secuencia(secuencia_1,cantida_de_datos_1_secuencia)
-    secuencia_2 = llenar_datos_2_secuencia(secuencia_2,cantida_de_datos_2_secuencia)
+    print("secuencia 1")
+    secuencia_1 = llenar_secuencia(cantida_de_datos_1_secuencia)
+    print("secuencia 2")
+    secuencia_2 = llenar_secuencia(cantida_de_datos_2_secuencia)
+    
     
     #aqui encontramos fibmenor 
 
-    fib_menor = encontrar_fib_menor(secuencia_1)
+    os.system("cls")
     
+    print(f"primera secuencia: {secuencia_1}")
+    print(f"primera secuencia: {secuencia_2}")
+
+    fib_menor = encontrar_fib_menor(secuencia_1)
+    print(f"fibonnaci menor: {fib_menor}")
     #aqui encontramos el primo menor
 
     segundo_primo = encontrar_segundo_primo(secuencia_1)
-    
+    print(f"segundo_primo: {segundo_primo}")
+
     resultado = fib_menor + segundo_primo
     
     posicion = encontrar_el_dato_buscado(resultado,secuencia_2)
     #encontrar el dato buscado
     dato_buscado = secuencia_2[posicion+2]
-    print(dato_buscado)
-inicializar_ejercicio_3_parcial_1()
+    print(f"el dato buscado es: {dato_buscado}")
+    os.system("pause")

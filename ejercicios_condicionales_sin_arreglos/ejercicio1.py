@@ -2,6 +2,13 @@
 #(de acuerdo al orden de entrada)y mostrarlos en forma ascendente, sin utilizar condiciones compuestas 
 import os
 
+def mostrar_el_ejercicio():
+    os.system("cls")
+    print("se tiene una cantidad de numeros dada donde hay varios numeros primos, obtener los primos 2,3,4")
+    print("(de acuerdo al orden de entrada)y mostrarlos en forma ascendente, sin utilizar condiciones compuestas")
+    os.system("pause")
+    os.system("cls")
+
 def determinar_ser_primo(numero):
     if numero <= 1:
         return False
@@ -47,27 +54,33 @@ def mostar_numeros(a,b,c):
     print(b)
     print(c)
     
-def inicializar_ejercicio_1_ejercicio_con_ciclos_sin_arreglos():
+def inicializar_ejercicio_1():
+    mostrar_el_ejercicio()
     hay_primos = 0
     cantidad_de_datos = pedir_cantidad_de_datos()
+    primo_2 = None
+    primo_3 = None
+    primo_4 = None
+    
+    #se inicia el ciclo para pedir numeros
     for i in range(cantidad_de_datos):
         numero = pedir_numero()
         if determinar_ser_primo(numero):
-            if hay_primos == 0:
-                hay_primos = 2#este se convierte en 2 porque si hay otro primo seria el segundo
-            else:
-                if hay_primos == 2:
-                    primo_2 = numero
-                if hay_primos == 3:
-                    primo_3 = numero
-                if hay_primos == 4:
-                    primo_4 = numero
-                    break 
-                hay_primos += 1
-                
-    organizar_numeros(primo_2,primo_3,primo_4)
+            hay_primos += 1
+            if hay_primos == 2:
+                primo_2 = numero
+            elif hay_primos == 3:
+                primo_3 = numero
+            elif hay_primos == 4:
+                primo_4 = numero
+                break
+    
+    if primo_2 == None or primo_3 == None or primo_4 == None:
+        print("no hay suficientes numeros primos para el ejercicio")
+    else:
+        organizar_numeros(primo_2,primo_3,primo_4)
     os.system("pause")
 
-inicializar_ejercicio_1_ejercicio_con_ciclos_sin_arreglos()
+
 
 

@@ -3,6 +3,14 @@
 #determinar el perimetro mayor y menor de los triangulos escalenos
 import os
 
+def mostrar_el_ejercicio():
+    os.system("cls")
+    print("se tiene una cantidad dada de ternas (3 valores numericos por terna)")
+    print("correspondiente a los lados de triangulos,")
+    print("determinar el perimetro mayor y menor de los triangulos escalenos")
+    os.system("pause")
+    os.system("cls")
+    
 def pedir_cantidad_de_datos():
     cd = input("cuantos datos vas a escribir: ")
     cd = int(cd)
@@ -34,12 +42,14 @@ def mostrar_perimetros(perimetro_mayor,perimetro_menor):
         print(f"el perimetro menor es de {perimetro_menor}")
     else:
         print("no se encontro ningun triangulo escaleno")
-    os.system("pause")
     
 
-def incializar_ejercicio_3_ejercicios_con_ciclos_sin_arreglos():
-    perimetro_menor = False 
-    perimetro_mayor = False
+def inicializar_ejercicio_3():
+    
+    mostrar_el_ejercicio()
+    
+    perimetro_menor = None 
+    perimetro_mayor = None
     
     cantidad_de_datos = pedir_cantidad_de_datos()
     
@@ -49,14 +59,14 @@ def incializar_ejercicio_3_ejercicios_con_ciclos_sin_arreglos():
         es_escaleno = determinar_si_es_triangulo_escaleno(lado_a, lado_b, lado_c)#un triangulo escaleno es un triangulo que no tienen ningun lado en comun
         if es_escaleno:
             perimetro = calcular_perimetro(lado_a, lado_b, lado_c)
-            if perimetro_mayor == False:
+            if perimetro_mayor == None:
                 perimetro_mayor = perimetro
                 perimetro_menor = perimetro
             elif perimetro > perimetro_mayor:
                 perimetro_mayor = perimetro
             elif perimetro < perimetro_menor:
                 perimetro_menor = perimetro
-    mostrar_perimetros(perimetro_mayor,perimetro_menor)    
+    mostrar_perimetros(perimetro_mayor,perimetro_menor)   
+    os.system("pause")
+    os.system("cls")
     
-    
-incializar_ejercicio_3_ejercicios_con_ciclos_sin_arreglos()

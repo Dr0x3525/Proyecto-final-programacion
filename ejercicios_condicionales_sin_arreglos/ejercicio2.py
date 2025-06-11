@@ -2,6 +2,16 @@
 #determinar si el primo 2 y el primo 3 
 #de acuerdo al orden de entrada son consecutivos
 
+import os
+
+def mostrar_el_ejercicio():
+    os.system("cls")
+    print("se tiene una cantidad de numeros dada donde hay varios primos")
+    print("determinar si el primo 2 y el primo 3")
+    print("de acuerdo al orden de entrada son consecutivos")
+    os.system("pause")
+    os.system("cls")
+
 def determinar_ser_primo(numero):
     if numero <= 1:
         return False
@@ -33,7 +43,7 @@ def organizar_numeros(a,b):
     return a, b
 
 def determinar_si_son_consecutivos(a,b):
-        for i in range(a+1,b-1):
+        for i in range(a+1,b):
             if determinar_ser_primo(i):
                 return False
         return True
@@ -44,24 +54,32 @@ def mostrar_respuesta(respuesta,a,b):
     else:
         print(f"los numeros {a} y {b} no son consecutivos")
 
-def inicializar_ejercicio_2_ejercicio_con_ciclos_sin_arreglos():
-    hay_primos = False
+def inicializar_ejercicio_2():
+    mostrar_el_ejercicio()
+    hay_primos = None
+    primo_2 = None
+    primo_3 = None
     cantidad_de_datos = pedir_cantidad_de_datos()
     for i in range(cantidad_de_datos):
         numero = pedir_numero()
         if determinar_ser_primo(numero):
-            if hay_primos == 0:
-                hay_primos = 2#este se convierte en 2 porque si hay otro primo seria el segundo
+            if hay_primos == None:
+                hay_primos = 1
             else:
+                hay_primos += 1
                 if hay_primos == 2:
                     primo_2 = numero
                 if hay_primos == 3:
                     primo_3 = numero
-                hay_primos += 1
+                    break
                 
-    numero_menor, numero_mayor =organizar_numeros(primo_2,primo_3)
-
-    son_consecutivos = determinar_si_son_consecutivos(numero_menor,numero_mayor)
-    mostrar_respuesta(son_consecutivos,numero_menor,numero_mayor)
+    if primo_2 == None or primo_3 == None:
+        print("no hay suficientes numeros primos")
+    else:                
+        numero_menor, numero_mayor =organizar_numeros(primo_2,primo_3)
+        son_consecutivos = determinar_si_son_consecutivos(numero_menor,numero_mayor)
+        mostrar_respuesta(son_consecutivos,numero_menor,numero_mayor)
+        
+    os.system("pause")
+    os.system("cls")
     
-inicializar_ejercicio_2_ejercicio_con_ciclos_sin_arreglos()

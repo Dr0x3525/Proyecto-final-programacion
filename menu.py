@@ -4,7 +4,18 @@ import ejercicios_parcial_1.ejercicio1 as parcial_1_ejercicio_1
 import ejercicios_parcial_1.ejercicio2 as parcial_1_ejercicio_2
 import ejercicios_parcial_1.ejercicio3 as parcial_1_ejercicio_3
 import ejercicios_parcial_1.ejercicio4 as parcial_1_ejercicio_4
+import ejercicios_condicionales_sin_arreglos.ejercicio1 as condicionales_ejercicio_1
+import ejercicios_condicionales_sin_arreglos.ejercicio2 as condicionales_ejercicio_2
+import ejercicios_condicionales_sin_arreglos.ejercicio3 as condicionales_ejercicio_3
+import ejercicios_condicionales_sin_arreglos.ejercicio4 as condicionales_ejercicio_4
+import ejercicios_condicionales_sin_arreglos.ejercicio5 as condicionales_ejercicio_5
+
+def limpiar_pantalla():
+    os.system("cls")
+
 #////////opciones////
+
+
 
 def opciones_menu_principal(opcion_escogida):
     match opcion_escogida:
@@ -21,13 +32,14 @@ def opciones_menu_principal(opcion_escogida):
             while  opciones_ejercicios_parciales(menu_parciales()) != "5":
                 pass        
         case "5":
-            while  opciones_ejercicios_con_cadenas(menu_ejercicios_con_cadenas()) != "11":
+            while  ejercicios_condicionales_sin_arreglos(menu_ejercicios_condicionales_sin_arreglos()) != "6":
                 pass
         case "6": 
             print("fin programa")
             os.system("pause")
             return "6"
         case other:
+            os.system("cls")
             print("Error")
             os.system("pause")
 
@@ -257,52 +269,34 @@ def opciones_ejercicios_parcial_1(opcion_escogida):
             os.system("pause")
             return "6"
 
-def opciones_ejercicios_con_cadenas(opcion_escogida):
+def ejercicios_condicionales_sin_arreglos(opcion_escogida):
     match opcion_escogida:
         case "1":
             print("opcion 1")
-            os.system("pause")
+            limpiar_pantalla()
+            condicionales_ejercicio_1.inicializar_ejercicio_1()
             return "1"
         case "2":
             print("opcion 2")
-            os.system("pause")
+            condicionales_ejercicio_2.inicializar_ejercicio_2()
             return "2"
         case "3":
             print("opcion 3")
-            os.system("pause")
+            condicionales_ejercicio_3.inicializar_ejercicio_3()
             return "3"
         case "4":
             print("opcion 4")
-            os.system("pause")
+            condicionales_ejercicio_4.inicializar_ejercicio_4()
             return "4"
         case "5":
             print("opcion 5")
-            os.system("pause")
+            condicionales_ejercicio_5.inicializar_ejercicio_5()
             return "5"
         case "6":
-            print("ejercicio 6")
-            os.system("pause")
             return "6"
-        case "7":
-            print("ejercicio 7")
-            os.system("pause")
-            return "7"
-        case "8":
-            print("ejercicio 8")
-            os.system("pause")
-            return "8"
-        case "9":
-            print("ejercicio 9")
-            os.system("pause")
-            return "9"
-        case "10":
-            print("ejericio 10")
-            os.system("pause")
-            return "10"
-        case "11":
-            return "11"
         case other:
-            print("error puto")
+            os.system("cls")
+            print("error digite un numero correcto")
             os.system("pause")
             return "12"
 
@@ -311,12 +305,13 @@ def opciones_ejercicios_con_cadenas(opcion_escogida):
 #////////menus////
 def menu_principal():
     os.system('cls') 
+    print("menu principal")
     print('---------------------------------')
     print('   1. Ejercicios vectores')
     print('   2. Ejercicios matrices')
     print('   3. Ejercicios vectores y matrices ')
     print('   4. Ejercicios parciales ')
-    print('   5. Ejercicios cadenas ')
+    print('   5. Ejercicios con condicionales sin arreglos ')
     print('   ')
     print('   6. Terminar programa')
     print('')
@@ -450,21 +445,16 @@ def menu_ejercicios_vectores_y_matrices():
 
 
 
-def menu_ejercicios_con_cadenas():
+def menu_ejercicios_condicionales_sin_arreglos():
     os.system('cls')
+    print("menu ejercicios con condicionales sin arreglos")
     print('---------------------------------')
-    print('   1. Ejercicios ca')
-    print('   2. Ejercicios ca')
-    print('   3. Ejercicios ca')
-    print('   4. Ejercicios ca')
-    print('   5. Ejercicios ca')
-    print('   6. Ejercicios ca')
-    print('   7. Ejercicios ca')
-    print('   8. Ejercicios ca')
-    print('   9. Ejercicios ca')
-    print('   10. Ejercicios ca')
-    print('   ')
-    print('   11. Regresar')
+    print('   1. Ejercicios 1')
+    print('   2. Ejercicios 2')
+    print('   3. Ejercicios 3')
+    print('   4. Ejercicios 4')
+    print('   5. Ejercicios 5')
+    print('   6. Regresar')
     print('')
     print('--------------------------------')
     

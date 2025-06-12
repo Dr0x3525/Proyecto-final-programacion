@@ -13,11 +13,7 @@ def mostrar_el_ejercicio():
     os.system("pause")
     os.system("cls")
 
-def factorial(numero):
-    resultado = 1
-    for i in range(1, numero + 1):
-        resultado = i * resultado
-    return resultado
+
 
 def mostrar_resultado(matriz,a,b):
     print("matriz:")
@@ -55,7 +51,7 @@ def encontrar_promedios(matriz):
     if contador_pares_superior != 0:
         prom_superior = sumatoria_pares_superior / contador_pares_superior 
     
-    if contadores_impares_inferior:
+    if contadores_impares_inferior != 0:
         prom_inferior = sumatoria_impares_inferior / contadores_impares_inferior 
     
     
@@ -70,10 +66,12 @@ def pedir_datos():
             numero = int(input(f"digita el valor de la fila {fil} y la columna {col}: "))
             filas.append(numero)
         matriz.append(filas)
+        os.system("cls")
+
     
     return matriz
 
-def inicializa_ejercicio_1_matrices():
+def inicializa_ejercicio_1():
     mostrar_el_ejercicio() 
     matriz = pedir_datos() #[[4,6,1],[2,3,5],[7,8,9],] 
     os.system("cls")
@@ -82,4 +80,3 @@ def inicializa_ejercicio_1_matrices():
     os.system("pause")
     os.system("cls")   
     
-inicializa_ejercicio_1_matrices()

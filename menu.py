@@ -12,6 +12,10 @@ import ejercicios_arreglos.ejercicio_5 as vectores_ejercicio_5
 import ejercicios_arreglos.ejercicio_6 as vectores_ejercicio_6
 import ejercicios_arreglos.ejercicio_7 as vectores_ejercicio_7
 import ejercicios_arreglos.ejercicio_8 as vectores_ejercicio_8
+import ejercicios_con_matrices.ejercicio1 as matrices_ejercicio_1
+import ejercicios_con_matrices.ejercicio2 as matrices_ejercicio_2
+import ejercicios_con_matrices.ejercicio3 as matrices_ejercicio_3
+import ejercicios_con_matrices.ejercicio4 as matrices_ejercicio_4
 
 
 
@@ -30,7 +34,7 @@ def opciones_menu_principal(opcion_escogida):
             while  opciones_vectores(menu_vectores()) != "9": 
                 pass
         case "2": 
-            while  opciones_ejercicios_con_matrices(menu_ejercicios_matrices()) != "11": 
+            while  opciones_ejercicios_con_matrices(menu_ejercicios_matrices()) != "5": 
                 pass
         case "3": 
             while  opciones_ejercicios_con_vectores_y_matrices(menu_ejercicios_vectores_y_matrices()) != "11":
@@ -118,46 +122,22 @@ def opciones_ejercicios_con_matrices(opcion_escogida):
     match opcion_escogida:
         case "1":
             print("opcion 1")
-            os.system("pause")
+            matrices_ejercicio_1.inicializa_ejercicio_1()
             return "1"
         case "2":
             print("opcion 2")
-            os.system("pause")
+            matrices_ejercicio_2.inicializa_ejercicio_2()
             return "2"
         case "3":
             print("opcion 3")
-            os.system("pause")
+            matrices_ejercicio_3.inicializa_ejercicio_3()
             return "3"
         case "4":
             print("opcion 4")
-            os.system("pause")
+            matrices_ejercicio_4.inicializa_ejercicio_4()
             return "4"
         case "5":
-            print("opcion 5")
-            os.system("pause")
             return "5"
-        case "6":
-            print("ejercicio 6")
-            os.system("pause")
-            return "6"
-        case "7":
-            print("ejercicio 7")
-            os.system("pause")
-            return "7"
-        case "8":
-            print("ejercicio 8")
-            os.system("pause")
-            return "8"
-        case "9":
-            print("ejercicio 9")
-            os.system("pause")
-            return "9"
-        case "10":
-            print("ejericio 10")
-            os.system("pause")
-            return "10"
-        case "11":
-            return "11"
         case other:
             os.system('cls')
             print("opcion no valida vuelva a intentarlo")
@@ -405,19 +385,14 @@ def menu_ejercicio_con_varios_vectores():
 
 def menu_ejercicios_matrices():
     os.system('cls')
+    print("menu matrices")
     print('---------------------------------')
-    print('   1. Ejercicios mat')
-    print('   2. Ejercicios mat')
-    print('   3. Ejercicios con mat')
-    print('   4. Ejercicios con mat')
-    print('   5. Ejercicios con mat')
-    print('   6. Ejercicios con mat')
-    print('   7. Ejercicios con mat')
-    print('   8. Ejercicios con mat')
-    print('   9. Ejercicios con mat')
-    print('   10. Ejercicios con mat')
+    print('   1. Ejercicios 1')
+    print('   2. Ejercicios 2')
+    print('   3. Ejercicios 3')
+    print('   4. Ejercicios 4')
     print('   ')
-    print('   11. Regresar')
+    print('   5. Regresar')
     print('')
     print('--------------------------------')
     

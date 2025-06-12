@@ -2,18 +2,50 @@
 #obtener un vector ordenado ascendentemente con la mezcla de los dos anteriores. 
 # (ordenamiento por mezcla).
 
+import os
+
+def mostrar_el_ejercicio():
+    os.system("cls")
+    print("Se tienen dos matrices ordenadas ascendentemente")
+    print("obtener un vector ordenado ascendentemente con la mezcla de los dos anteriores. (ordenamiento por mezcla).")
+    os.system("pause")
+    os.system("cls")
+
+def pedir_datos():
+    filas = int(input("cuantos filas tiene la matriz: "))
+    cols = int(input("cuantos columnas tiene la matriz: "))
+    matriz = []
+    for fil in range(filas):
+        filas = []
+        for col in range(cols):
+            numero = int(input(f"digita el valor de la fila {fil} y la columna {col}: "))
+            filas.append(numero)
+        matriz.append(filas)
+        os.system("cls")
+
+    return sorted(matriz)
+
+def mostrar_resultado(matriz_a,matriz_b,vector):
+    print(f"matriz a:")
+    for fila in matriz_a:
+        print(fila)
+    print(f"matriz b:")
+    for fila in matriz_b:
+        print(fila)
+    print(f"vector resultante {vector}")
 
 
-def inicializar_ejercicio_3_matrices():
+        
+def inicializa_ejercicio_3():
+    mostrar_el_ejercicio()
+    print("matriz 1")
+    matriz_A =  pedir_datos()#[[ 1,  4,  7],[10, 13, 16],[19, 22, 25]]
+    os.system("cls")
+    print("matriz 2")
 
-    matriz_A = [    [ 1,  4,  7],  
-                    [10, 13, 16],  
-                    [19, 22, 25]  ]
-    
-    matriz_B = [    [ 2,  5,  8],
-                    [11, 14, 17], 
-                    [20, 23, 26]   ]
-    
+    matriz_B =  pedir_datos()#[[ 2,  5,  8],[11, 14, 17],[20, 23, 26]]
+    os.system("cls")
+
     vector = []
         
     num_filas_matriz_a = len(matriz_A)
@@ -25,6 +57,7 @@ def inicializar_ejercicio_3_matrices():
     indice_col_matriz_a = 0
     indice_fila_matriz_b = 0
     indice_col_matriz_b = 0
+
 
     while indice_fila_matriz_a < num_filas_matriz_a and indice_fila_matriz_b < num_filas_matriz_b: #el bucle termina cuando el indice sea mayor o igual que el numero de filas de la matriz que sea 
         
@@ -63,8 +96,8 @@ def inicializar_ejercicio_3_matrices():
             indice_fila_matriz_b += 1
             indice_col_matriz_b = 0
   
-  
-    print(vector)
+    mostrar_resultado(matriz_A,matriz_B,vector)
+    os.system("pause")
+    os.system("cls")   
                      
-inicializar_ejercicio_3_matrices()
     

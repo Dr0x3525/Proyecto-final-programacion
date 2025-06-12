@@ -21,6 +21,15 @@ import ejercicios_diccionarios.ejercicio_2 as diccionario_ejercicio_2
 import ejercicios_diccionarios.ejercicio_3 as diccionario_ejercicio_3
 import ejercicios_diccionarios.ejercicio_4 as diccionario_ejercicio_4
 import ejercicios_diccionarios.ejercicio_5 as diccionario_ejercicio_5
+import ejercicios_parciales.ejercicios_parcial_1.ejercicio1 as parcial_1_ejercicio_1
+import ejercicios_parciales.ejercicios_parcial_1.ejercicio2 as parcial_1_ejercicio_2
+import ejercicios_parciales.ejercicios_parcial_1.ejercicio3 as parcial_1_ejercicio_3
+import ejercicios_parciales.ejercicios_parcial_1.ejercicio4 as parcial_1_ejercicio_4
+import ejercicios_parciales.ejercicios_recuperacion_parcial_1.ejercicio_1 as recuperacion_1_ejercicio_1
+import ejercicios_parciales.ejercicios_recuperacion_parcial_1.ejercicio_2 as recuperacion_1_ejercicio_2
+
+
+
 
 
 
@@ -190,7 +199,8 @@ def opciones_ejercicios_parciales(opcion_escogida):
             return "1"
         case "2":
             print("opcion 2")
-            parcial_1_ejercicio_2.inicializar_ejercicio_2()
+            while opciones_ejercicios_recuperacion_parcial_1(menu_recuperacion_parcial_1()) != "3":
+              pass              
             return "2"
         case "3":
             print("opcion 3")
@@ -203,7 +213,8 @@ def opciones_ejercicios_parciales(opcion_escogida):
         case "5":
             return "5"
         case other:
-            print("error ")
+            os.system('cls')
+            print("opcion no valida vuelva a intentarlo")
             os.system("pause")
             return "6"
 
@@ -228,10 +239,27 @@ def opciones_ejercicios_parcial_1(opcion_escogida):
         case "5":
             return "5"
         case other:
-            print("error ")
+            os.system('cls')
+            print("opcion no valida vuelva a intentarlo")
             os.system("pause")
             return "6"
 
+def opciones_ejercicios_recuperacion_parcial_1(opcion_escogida):
+    match opcion_escogida:
+        case "1":
+            recuperacion_1_ejercicio_1.inicializar_ejercicio_1()
+            return "1"
+        case "2":
+            recuperacion_1_ejercicio_2.inicializar_ejercicio_2()
+            return "2"
+        case "3":
+            return "3"
+        case other:
+            os.system('cls')
+            print("opcion no valida vuelva a intentarlo")
+            os.system("pause")
+            return "6"
+        
 def ejercicios_condicionales_sin_arreglos(opcion_escogida):
     match opcion_escogida:
         case "1":
@@ -308,6 +336,7 @@ def menu_vectores():
 
 def menu_parciales():
     os.system('cls') 
+    print("ejercicios parciales")
     print('---------------------------------')
     print('   1. parcial 1')
     print('   2. recuperacion parcial 1')
@@ -322,7 +351,8 @@ def menu_parciales():
     return opcion
 
 def menu_parcial_1():
-    os.system('cls') 
+    os.system('cls')
+    print("ejercicios parcial 1")
     print('---------------------------------')
     print('   1. ejercicio 1')
     print('   2. ejercicio 2')
@@ -330,6 +360,19 @@ def menu_parcial_1():
     print('   4. ejercicio 4')
     print('   ')
     print('   5. Regresar')
+    print('')
+    print('--------------------------------')
+    
+    opcion = input("elija una opcion :") #ya que la variable para la variable opcion no se van a realizar operaciones lo mejor es dejala con un string     
+    return opcion
+
+def menu_recuperacion_parcial_1():
+    os.system('cls') 
+    print('---------------------------------')
+    print('   1. ejercicio 1')
+    print('   2. ejercicio 2')
+    print('   ')
+    print('   3. Regresar')
     print('')
     print('--------------------------------')
     

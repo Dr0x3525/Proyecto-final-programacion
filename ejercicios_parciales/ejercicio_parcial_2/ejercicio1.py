@@ -3,6 +3,23 @@
 #a la derecha del segundo fibonnaci del segundo vector
 import os
 
+def mostrar_el_ejercicio():
+    os.system("cls")
+    print("se tienen dos vectores con datos numericos")
+    print("sumar los primos del primer vector e insertar esta suma a la derecha del segundo fibonnaci del segundo vector")
+    os.system("pause")
+    os.system("cls")
+
+def pedir_datos():
+    lista = []
+    cantidad_de_datos = int(input("cuantos datos vas a ingresar: "))
+    
+    for numero in range(cantidad_de_datos):
+        dijito = input(f"digita el valor {numero+1}: ")
+        dijito = int(dijito)
+        lista.append(dijito)
+    return lista   
+
 def Comprobar_ser_primo(numero):
     numero = int(numero)
     if numero <= 1:
@@ -45,21 +62,33 @@ def encontrar_el_segundo_fib(vector):
             else:
                 return indice+1
         indice += 1  
+    return None
 
 def insertar_suma_en_vector_2(vector,dato_a_insertar,indice_2_primo):
     vector.insert(indice_2_primo,dato_a_insertar)
-    print(vector)
+    print(f"vector final: {vector}")
     return vector
     
             
-def incializar_ejercicio_1_parcial_2():
-    vector1 = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]  # Primos: 2, 3, 5, 7, 11 (suma = 28)
-    vector2 = [1, 1, 2, 3, 4, 5, 8, 13, 21]     # Fibonacci: todos excepto el 4
-    suma_primos_primer_vector = sumar_primos_primer_vector(vector1)
-    print(suma_primos_primer_vector)
-    segundo_fib = encontrar_el_segundo_fib(vector2)
-    print(segundo_fib)
-    insertar_suma_en_vector_2(vector2,suma_primos_primer_vector,segundo_fib)
-    os.system("pause")
+def incializar_ejercicio_1():
+    mostrar_el_ejercicio()
+    print("vector 1")
+    vector_1 = pedir_datos()# [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]  cd = 10
+    os.system("cls")
+    print("vector 2")
+    vector_2 = pedir_datos()# [1, 1, 2, 3, 4, 5, 8, 13, 21]     cd = 9
+    os.system("cls")
+    print(f"vector 1: {vector_1}")
+    print(f"vector 2: {vector_2}")
+    suma_primos_primer_vector = sumar_primos_primer_vector(vector_1)
+    print(f"suma de los primos del primer vector {suma_primos_primer_vector}")
+    segundo_fib = encontrar_el_segundo_fib(vector_2)
     
-incializar_ejercicio_1_parcial_2()
+    if segundo_fib == None:
+      print("no hay suficientes numeros fibonacci")
+    else:
+        print(f"segundo fibonacci del vector 2: {segundo_fib}")
+        insertar_suma_en_vector_2(vector_2,suma_primos_primer_vector,segundo_fib)
+    os.system("pause")
+    os.system("cls")
+

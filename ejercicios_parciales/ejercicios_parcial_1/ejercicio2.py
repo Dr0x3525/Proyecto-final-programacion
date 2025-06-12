@@ -3,6 +3,13 @@
 #encuentran en estos y el triangulo equilatero con mayor perimetro.
 import os
 
+def mostrar_el_ejercicio():
+    os.system("cls")
+    print("se tiene una cantidad dada de ternas(3 valores numericos por terna) correspondiente a los lados de un triangulo")
+    print("determinar cuantos triangulos equilateros, escalenos e isoceles se encuentran en estos y el triangulo equilatero con mayor perimetro.")
+    os.system("pause")
+    os.system("cls")
+    
 def pedir_ternas(lado,triangulo):
     while True: # Bucle infinito hasta que se ingrese opción válida
         os.system("cls")
@@ -54,6 +61,7 @@ def repeticiones_del_programa():
             os.system("pause")
                 
 def inicializar_ejercicio_2():
+    mostrar_el_ejercicio()
     os.system("cls")
     cd = repeticiones_del_programa()
     os.system("cls")

@@ -3,6 +3,13 @@
 #y el primer fibbonacci que se encuentra despues de este dato hallado
 import os
 
+def mostrar_el_ejercicio():
+    os.system("cls")
+    print("busca un dato en una cantidad de datos dada y hallar la multiplicacion con sumas del primer primo")
+    print("y el primer fibbonacci que se encuentra despues de este dato hallado")    
+    os.system("pause")
+    os.system("cls")
+    
 def Comprobar_ser_primo(numero):
     numero = int(numero)
     if numero <= 1:
@@ -74,6 +81,7 @@ def pedir_numero_buscado():
     return numero_buscado
 
 def inicializar_ejercicio_4_parcial_1():
+    mostrar_el_ejercicio()
     os.system("cls")
     lista = pedir_lista()
     buscar_dato = pedir_numero_buscado()

@@ -7,6 +7,14 @@
 
 import os
 
+def mostrar_el_ejercicio():
+    os.system("cls")
+    print("buscar un dato")
+    print("se tienen dos secuencias de datos con cantidadesdadas de numerosque van a entrar una a una el numero buscado esta determinado por la suma del fibonnaci menor y el segundo primo de la primera serie de numeros esta suma se encuentra en la segunda serie de numeros,")
+    print("el dato buscado esta dos posiciones despues de la posicion del dato encontrado de acuerdo al orden de entrada. no realizar validaciones")    
+    os.system("pause")
+    os.system("cls")
+    
 def Comprobar_ser_primo(numero):
     numero = int(numero)
     if numero <= 1:
@@ -74,6 +82,7 @@ def encontrar_el_dato_buscado(numero,secuencia_2):
      
 
 def inicializar_ejercicio_3_parcial_1():
+    mostrar_el_ejercicio()
     os.system("cls")
     secuencia_1 =[]
     secuencia_2 =[]

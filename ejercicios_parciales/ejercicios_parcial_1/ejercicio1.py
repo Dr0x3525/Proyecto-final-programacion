@@ -35,7 +35,30 @@ def pedir_codigo():
             print("Error: Debe ingresar un número entero válido. Intente nuevamente.")
             os.system("pause")
 
+def mostrar_el_ejercicio():
+    os.system("cls")
+    print("""#1.una empres de servicios publicos 
+ desea calcular el valor de las facturas de una cantidad dada de usuarios 
+ del servicio de agua.
+ por cada usuario se tiene:
+-codigo del usuario
+-consumo mensual de metros cubicos
+-estrato
+de acuerdo al estarto del usuario se realizara lo siguiente.
+estrato1---descuento del 40% del valor total
+estrato2---descuento del 30% del valor total
+estrato3---descuento del 15% del valor total
+estrato4---sin descuento
+estrato 5 y 6---incremento del valor en un 20%
 
+mostrar por cada usuario:
+codigo, valor total, descuento o incremento, valor Neto 
+
+ademas de esto mostrar el promedio de los balores pagados por estrato 1
+pago total mayor de los del estrato 2 mostrar el codigo y el valor
+formar un diccionario con los primos de las dos matrices y las veces que se repiten.""")
+    os.system("pause")
+    os.system("cls")
 
 def pedir_consumo_mensual():
     while True:# Bucle infinito hasta que se ingrese opción válida
@@ -121,6 +144,7 @@ def Mostrar_factura(codigo_usuario,descuento_estrato,valor_total,valor_neto):
 
     
 def inicializar_ejercicio_1():
+    mostrar_el_ejercicio()
     continuar_digitando_usuarios = True
     VALOR_M3 = 10000 #esto es una constante y segun la documentacion que estaba leyendo se escriben en mayusculas xd
     contador_estrato1  = 0

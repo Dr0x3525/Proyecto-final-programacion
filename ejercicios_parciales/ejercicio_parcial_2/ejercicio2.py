@@ -3,6 +3,23 @@
 #comprendido entre el primo menor y el fibbonacci mayor
 import os
 
+def mostrar_el_ejercicio():
+    os.system("cls")
+    print("se tiene un vector con datos numericos,")
+    print("ordenar en forma descendente el rango de un vector comprendido entre el primo menor y el fibbonacci mayor")
+    os.system("pause")
+    os.system("cls")
+
+def pedir_datos():
+    lista = []
+    cantidad_de_datos = int(input("cuantos datos vas a ingresar: "))
+    
+    for numero in range(cantidad_de_datos):
+        dijito = input(f"digita el valor {numero+1}: ")
+        dijito = int(dijito)
+        lista.append(dijito)
+    return lista   
+
 def Comprobar_ser_primo(numero):
     numero = int(numero)
     if numero <= 1:
@@ -29,58 +46,72 @@ def comprobar_ser_fibbonaci(numero):
     return False
 
 def encontrar_primo_menor(vector):
-    se_encontro_primos = False
-    indice_primo_menor = 0
-    for i in vector:
-        if Comprobar_ser_primo(i):
-            if se_encontro_primos == False:
-                primo_menor = i
-                se_encontro_primos = True
+    primo_menor = None
+    indice_menor = None
+    for indice in range(len(vector)):
+        if Comprobar_ser_primo(vector[indice]):
+            if primo_menor == None:
+                primo_menor = vector[indice]
+                indice_menor = indice
             else:
-                if primo_menor > i:
-                    primo_menor = i
-        indice_primo_menor += 1 
-    return primo_menor, indice_primo_menor
+              if primo_menor > vector[indice]:
+                  primo_menor = vector[indice]
+                  indice_menor = indice
+    return primo_menor, indice_menor
 
 def encontrar_fibbonacci_mayor(vector):
-    se_encontro_fib = False
-    indice_fib_mayor = 0
-    for i in vector:
-        if comprobar_ser_fibbonaci(i):
-            if se_encontro_fib == False:
-                fib_mayor = i
-                se_encontro_fib = True
+    fib_mayor = None
+    indice_mayor = None
+    for indice in range(len(vector)):
+        if comprobar_ser_fibbonaci(vector[indice]):
+            if fib_mayor == None:
+                fib_mayor = vector[indice]
+                indice_mayor = indice
             else:
-                if fib_mayor < i:
-                    fib_mayor = i
-        indice_fib_mayor += 1
-    return fib_mayor, indice_fib_mayor
+                if fib_mayor < vector[indice]:
+                    fib_mayor = vector[indice]
+                    indice_mayor = indice
+    return fib_mayor, indice_mayor
 
 def ordenar_primo_menor_y_fib_mayor(a,b):
-    if a > b:
-        mayor = a
-        menor = b
+    if a < b:
+        return a, b
     else:
-        menor = a
-        mayor = b
+        return b,a
         
-    return menor,mayor
 
 def ordenar_vector_descendentemente(vector,menor,mayor):
-    for i in range(len(vector)):
-        if i == menor:
-          print(vector[i])
+    subvector = []
+    for indice in range(menor+1,mayor):
+        subvector.append(vector[indice])
+    subvector = sorted(subvector, reverse=True)
+        
+    subindice = 0
+    
+    for indice in range(menor+1,mayor):
+        vector[indice] = subvector[subindice]
+        subindice +=1
+        
+    return vector
+    
 
-def inicializar_ejercicio_2_parcial_2():
-    vector = [4, 8, 15, 7, 13, 2, 21, 5, 34, 1, 89, 3]
-    
+def inicializar_ejercicio_2():
+    mostrar_el_ejercicio()
+    vector = pedir_datos()#[4, 8, 15, 7, 13, 2, 21, 5, 34, 1, 89, 3] cd = 12
+    os.system("cls")
     primo_menor, indice_primo_menor = encontrar_primo_menor(vector)#encontrar primo menor
-    print(primo_menor,indice_primo_menor)
     fib_mayor, indice_fib_mayor = encontrar_fibbonacci_mayor(vector)#encontrar fibbonaci mayor
-    print(fib_mayor,indice_fib_mayor)
-    menor, mayor = ordenar_primo_menor_y_fib_mayor(indice_primo_menor,indice_fib_mayor)#ordenar_primo_menor_y_fib_mayor
-    ordenar_vector_descendentemente(vector,menor,mayor)
+    
+    if primo_menor == None or fib_mayor == None:
+        print("no hay suficientes valores para realizar el ejercicio")
+    else:
+        menor, mayor = ordenar_primo_menor_y_fib_mayor(indice_primo_menor,indice_fib_mayor)#ordenar_primo_menor_y_fib_mayor
+        print(f"vector original: {vector}")
+        print(f"primo menor: {primo_menor}")
+        print(f"fibonacci mayor: {fib_mayor}")
+        vector = ordenar_vector_descendentemente(vector,menor,mayor)
+        print(f"vector nuevo: {vector}")
     os.system("pause")
+    os.system("cls")
+
     
-    
-inicializar_ejercicio_2_parcial_2()

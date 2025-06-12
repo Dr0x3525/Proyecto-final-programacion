@@ -2,6 +2,15 @@
 # formar un tercer vector con los números primos
 # que están entre el Fibonacci mayor y el Fibonacci menor.
 
+import os
+
+def mostrar_el_ejercicio():
+    os.system("cls")
+    print("Se tienen un vector con datos numéricos donde hay varios números Fibonacci")
+    print("formar un segundo vector con los números primos que están entre el Fibonacci mayor y el Fibonacci menor.")
+    os.system("pause")
+    os.system("cls")
+
 def comprobar_ser_fibbonaci(numero):
     numero = int(numero)
     f1 = 0 
@@ -26,16 +35,36 @@ def determinar_ser_primo(numero):
                     return False
             return True
 
-def inicializar_ejercicio_5_ejercicio_arreglos():
+def pedir_datos():
+    lista = []
+    cantidad_de_datos = int(input("cuantos datos vas a ingresar: "))
+    
+    for numero in range(cantidad_de_datos):
+        dijito = input(f"digita el valor {numero+1}: ")
+        dijito = int(dijito)
+        lista.append(dijito)
+    return lista     
 
-    Vector_1 =  [4, 7, 13, 10, 5, 21, 8, 3, 34, 12]
+def mostrar_respuesta(vector_1, vector_2,fib_mayor,fib_menor):
+    print(f"vector 1: {vector_1}")
+    print("el vector 2 esta compuesto con con los Fibonacci del vector 1 con los números primos que están entre el Fibonacci mayor y el Fibonacci menor.")
+    print(f"fibonacci mayor : {fib_mayor}")
+    print(f"fibonacci menor : {fib_menor}")
+    print(f"vector 2: {vector_2}")
+    
+    
+def inicializar_ejercicio_5():
+    mostrar_el_ejercicio()
+    print("vector 1")
+    Vector_1 = pedir_datos() # [4, 7, 13, 10, 5, 21, 8, 3, 34, 12] cd = 10
+    os.system("cls")
     Vector_2 = []
     
-    fib_menor = False
-    fib_mayor = False
+    fib_menor = None
+    fib_mayor = None
     for numero in Vector_1:
         if comprobar_ser_fibbonaci(numero):
-            if fib_menor == False:
+            if fib_menor == None:
                 fib_menor = numero
                 fib_mayor = numero
             else:
@@ -48,8 +77,8 @@ def inicializar_ejercicio_5_ejercicio_arreglos():
         if determinar_ser_primo(numero):
             Vector_2.append(numero)
             
-    print(Vector_2)
-     
+    mostrar_respuesta(Vector_1,Vector_2,fib_mayor,fib_menor)
+    os.system("pause")
+    os.system("cls")   
     
     
-inicializar_ejercicio_5_ejercicio_arreglos()

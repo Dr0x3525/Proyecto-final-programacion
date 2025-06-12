@@ -1,11 +1,18 @@
 #5.	En el diccionario anterior determinar cual es el par mayor y la clave donde se encuentra.
 
-from ejercicio_4 import inicializar_ejercicio_4_ejercicio_diccionario 
+from ejercicios_diccionarios.ejercicio_4 import inicializar_ejercicio_4
 
+import os
 
+def mostrar_el_ejercicio():
+    os.system("cls")
+    print("En el diccionario anterior determinar cual es el par mayor y la clave donde se encuentra (ejercicio 4)")
+    os.system("pause")
+    os.system("cls")
 
-def inicializar_ejercicio_5_ejercicio_diccionario():
-    diccionario = inicializar_ejercicio_4_ejercicio_diccionario()
+def inicializar_ejercicio_5():
+    mostrar_el_ejercicio()
+    diccionario = inicializar_ejercicio_4()
     mayor_par = None
     clave_mayor_par = None
     
@@ -19,7 +26,7 @@ def inicializar_ejercicio_5_ejercicio_diccionario():
         print(f"El mayor número par es {mayor_par} y se encuentra en la fila {clave_mayor_par}.")
     else:
         print("No hay números pares en el diccionario.")
-        
+    os.system("pause")
+    os.system("cls")
 
-inicializar_ejercicio_5_ejercicio_diccionario()
 

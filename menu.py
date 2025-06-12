@@ -16,13 +16,18 @@ import ejercicios_con_matrices.ejercicio1 as matrices_ejercicio_1
 import ejercicios_con_matrices.ejercicio2 as matrices_ejercicio_2
 import ejercicios_con_matrices.ejercicio3 as matrices_ejercicio_3
 import ejercicios_con_matrices.ejercicio4 as matrices_ejercicio_4
+import ejercicios_diccionarios.ejercicio_1 as diccionario_ejercicio_1
+import ejercicios_diccionarios.ejercicio_2 as diccionario_ejercicio_2
+import ejercicios_diccionarios.ejercicio_3 as diccionario_ejercicio_3
+import ejercicios_diccionarios.ejercicio_4 as diccionario_ejercicio_4
+import ejercicios_diccionarios.ejercicio_5 as diccionario_ejercicio_5
 
 
 
 
 
-def limpiar_pantalla():
-    os.system("cls")
+
+
 
 #////////opciones////
 
@@ -37,7 +42,7 @@ def opciones_menu_principal(opcion_escogida):
             while  opciones_ejercicios_con_matrices(menu_ejercicios_matrices()) != "5": 
                 pass
         case "3": 
-            while  opciones_ejercicios_con_vectores_y_matrices(menu_ejercicios_vectores_y_matrices()) != "11":
+            while  opciones_ejercicios_con_diccionarios(menu_ejercicios_diccionarios()) != "6":
                 pass
         case "4":
             while  opciones_ejercicios_parciales(menu_parciales()) != "5":
@@ -144,52 +149,35 @@ def opciones_ejercicios_con_matrices(opcion_escogida):
             os.system("pause")
             return "12"
 
-def opciones_ejercicios_con_vectores_y_matrices(opcion_escogida):
+def opciones_ejercicios_con_diccionarios(opcion_escogida):
     match opcion_escogida:
         case "1":
             print("opcion 1")
-            os.system("pause")
+            diccionario_ejercicio_1.inicializar_ejercicio_1()
             return "1"
         case "2":
             print("opcion 2")
-            os.system("pause")
+            diccionario_ejercicio_2.inicializar_ejercicio_2()
             return "2"
         case "3":
             print("opcion 3")
-            os.system("pause")
+            diccionario_ejercicio_3.inicializar_ejercicio_3()
             return "3"
         case "4":
             print("opcion 4")
-            os.system("pause")
+            diccionario_ejercicio_4.inicializar_ejercicio_4()
             return "4"
         case "5":
             print("opcion 5")
-            os.system("pause")
+            diccionario_ejercicio_5.inicializar_ejercicio_5()
             return "5"
         case "6":
             print("ejercicio 6")
             os.system("pause")
             return "6"
-        case "7":
-            print("ejercicio 7")
-            os.system("pause")
-            return "7"
-        case "8":
-            print("ejercicio 8")
-            os.system("pause")
-            return "8"
-        case "9":
-            print("ejercicio 9")
-            os.system("pause")
-            return "9"
-        case "10":
-            print("ejericio 10")
-            os.system("pause")
-            return "10"
-        case "11":
-            return "11"
         case other:
-            print("error puto")
+            os.system('cls')
+            print("opcion no valida vuelva a intentarlo")
             os.system("pause")
             return "12"
 
@@ -248,7 +236,7 @@ def ejercicios_condicionales_sin_arreglos(opcion_escogida):
     match opcion_escogida:
         case "1":
             print("opcion 1")
-            limpiar_pantalla()
+            
             condicionales_ejercicio_1.inicializar_ejercicio_1()
             return "1"
         case "2":
@@ -284,7 +272,7 @@ def menu_principal():
     print('---------------------------------')
     print('   1. Ejercicios vectores')
     print('   2. Ejercicios matrices')
-    print('   3. Ejercicios vectores y matrices ')
+    print('   3. Ejercicios diccionarios ')
     print('   4. Ejercicios parciales ')
     print('   5. Ejercicios con condicionales sin arreglos ')
     print('   ')
@@ -399,21 +387,17 @@ def menu_ejercicios_matrices():
     opcion = input("elija una opcion :")   
     return opcion
 
-def menu_ejercicios_vectores_y_matrices():
+def menu_ejercicios_diccionarios():
     os.system('cls')
+    print("menu diccionarios")
     print('---------------------------------')
-    print('   1. Ejercicios mat y v')
-    print('   2. Ejercicios mat y v')
-    print('   3. Ejercicios con mat y v')
-    print('   4. Ejercicios con mat y v')
-    print('   5. Ejercicios con mat y v')
-    print('   6. Ejercicios con mat y v')
-    print('   7. Ejercicios con mat y v')
-    print('   8. Ejercicios con mat y v')
-    print('   9. Ejercicios con mat y v')
-    print('   10. Ejercicios con mat y v')
+    print('   1. Ejercicio 1')
+    print('   2. Ejercicio 2')
+    print('   3. Ejercicio 3')
+    print('   4. Ejercicio 4')
+    print('   5. Ejercicio 5')
     print('   ')
-    print('   11. Regresar')
+    print('   6. Regresar')
     print('')
     print('--------------------------------')
     

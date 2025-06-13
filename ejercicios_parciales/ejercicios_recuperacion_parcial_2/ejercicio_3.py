@@ -45,12 +45,56 @@ def comprobar_ser_fibbonaci(numero):
         f2 = f1 + temp
     return False
 
+def encontrar_primo_2(vector):
+    contador_primos = 0
+    for numero in vector:
+        if Comprobar_ser_primo(numero):
+            contador_primos += 1
+            if contador_primos == 2:
+                return numero
+    return None
+
+def encontrar_penultimo_fib(vector):
+    contador_fib = 0
+    for numero in reversed(vector):
+        if comprobar_ser_fibbonaci(numero):
+            contador_fib += 1
+            if contador_fib == 2:
+                return numero
+    return None
+
+def remplazar_valores_vector_2(vector,suma):
+    for i in range(len(vector)):
+        if vector[i] % 2 != 0:
+            vector[i] = suma
+    return vector
+
 def inicializar_ejercicio_3():
     mostrar_el_ejercicio()
     print("vector 1")
-    vector_1 = pedir_datos()#[4, 5, 7, 8, 13, 12, 10] 
+    vector_1 = pedir_datos()#[4, 5, 7, 8, 13, 12, 10] cd= 7
     os.system("cls")
     print("vector 2")
-    vector_2 = pedir_datos()#[3, 6, 8, 9, 10, 11] 
-    vector_3 = []
+    vector_2 = pedir_datos()#[3, 6, 8, 9, 10, 11] cd= 6
     os.system("cls")
+    segundo_primo = encontrar_primo_2(vector_1)#encontrar segundo primo
+    penultimo_fib = encontrar_penultimo_fib(vector_1)#encontrar penultimo fibonaci
+    if segundo_primo == None or penultimo_fib == None:
+      print("insuficientes datos")
+    else:
+        suma = segundo_primo + penultimo_fib#sumar los datos
+        print(f"vector 1: {vector_1}")
+        print(f"segundo primo del vector 1: {segundo_primo}")
+        print(f"penultimo fib del vector 1: {penultimo_fib}")
+        print(f"suma anteriores digitos: {suma}")
+        os.system("pause")
+        os.system("cls")
+        
+        print(f"vector 2 original: {vector_2}")
+        vector_2 = remplazar_valores_vector_2(vector_2,suma)#remplazar  los numeros impares del vector 2 con la suma
+        os.system("pause")
+        os.system("cls")
+        print(f"vector 2 nuevo: {vector_2}")
+    os.system("pause")
+    os.system("cls")
+

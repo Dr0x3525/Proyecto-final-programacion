@@ -107,7 +107,7 @@ def mostrar_matriz(matriz):
     for fila in matriz:
         print(fila)  
 
-def incializar_ejercicio_3():
+def inicializar_ejercicio_3():
     mostrar_el_ejercicio()#mostrar ejercicio
     print("vector")
     vector = pedir_datos_lista()#[1, 2, 3, 5, 8, 13, 21, 34] cd = 8

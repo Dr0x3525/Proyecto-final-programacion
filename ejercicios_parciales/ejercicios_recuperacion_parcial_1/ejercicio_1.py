@@ -110,4 +110,3 @@ def inicializar_ejercicio_1():
     os.system("pause")
     os.system("cls")
 
-inicializar_ejercicio_1()

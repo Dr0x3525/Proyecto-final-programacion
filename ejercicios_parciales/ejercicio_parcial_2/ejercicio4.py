@@ -52,7 +52,7 @@ def pedir_datos():
     return lista   
 
 
-def inicializar_ejercicio_3():
+def inicializar_ejercicio_4():
     mostrar_el_ejercicio()
     vector = pedir_datos() #[4, 7, 2, 8, 3, 5, 7, 1, 8, 13, 7, 3] cd =12
 

@@ -83,4 +83,3 @@ def inicializar_ejercicio_2():
             print(f"el numero de repeticiones que es {repeticiones} no es un numero fibbonaci")
     os.system("pause")
     os.system("cls")
-inicializar_ejercicio_2()

@@ -1,0 +1,1 @@
+#se tiene un vector con datos numericos ordenar en forma ascendente el rango comprendido entre el penultimo fibonacci y el segundo primo. incluir las posiciones de estos valores
